@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "name": "Islak Hamburger MENÜ",
+      "price": 679,
+      "img": "islak_hamburger.jpg",
+      "desc": "Özel soslu ıslak hamburger"
+    },
+    {
+      "name": "Patates KIZARMASI",
+      "price": 109,
+      "img": "patates.jpg",
+      "desc": "Kızarmış patates"
+    },
+    {
+      "name": "Döner",
+      "price": 149,
+      "img": "doner.jpg",
+      "desc": "Lezzetli döner porsiyon"
+    },
+    {
+      "name": "Köfte Ekmek",
+      "price": 300,
+      "img": "kofte_ekmek.jpg",
+      "desc": "Ev yapımı köfte ekmek"
+    },
+    {
+      "name": "Çorba",
+      "price": 100,
+      "img": "corba.jpg",
+      "desc": "Günlük taze çorba"
+    },
+    {
+      "name": "Hamburger",
+      "price": 200,
+      "img": "hamburger.jpg",
+      "desc": "Klasik hamburger"
+    }
+  ]
+}

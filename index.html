@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezzetli Siparişler</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Lezzetli Siparişler</h1>
+</header>
+
+<section class="urunler">
+  <div class="urun-card">
+    <img src="images/kofte-ekmek.jpg" alt="Köfte Ekmek">
+    <h3>Köfte Ekmek</h3>
+    <p>Lezzetli köfte ekmeklerimizle tanışın.</p>
+  </div>
+  <div class="urun-card">
+    <img src="images/islak-hamburger.jpg" alt="Islak Hamburger">
+    <h3>Islak Hamburger</h3>
+    <p>Özel soslu ıslak hamburgerlerimiz sizleri bekliyor.</p>
+  </div>
+  <div class="urun-card">
+    <img src="images/hamburger.jpg" alt="Hamburger">
+    <h3>Hamburger</h3>
+    <p>Jülyen doğranmış etle hazırlanan hamburgerlerimiz.</p>
+  </div>
+</section>
+
+<section class="siparis">
+  <h2>Sipariş Ver</h2>
+  <form id="orderForm">
+    <input name="name" placeholder="İsim" required>
+    <input name="phone" placeholder="Telefon" required>
+    <textarea name="note" placeholder="Sipariş notu"></textarea>
+    <button type="submit">Siparişi Gönder</button>
+  </form>
+</section>
+
+<script>
+document.getElementById('orderForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const data = {
+    name: fd.get('name'),
+    phone: fd.get('phone'),
+    note: fd.get('note')
+  };
+
+  try {
+    const res = await fetch('https://your-backend-url.com/api/send-order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const j = await res.json();
+    if (res.ok) alert('Siparişiniz gönderildi!');
+    else alert('Hata: ' + (j.error || 'Sunucu hatası'));
+  } catch (err) {
+    alert('Sunucuya bağlanırken hata oluştu: ' + err.message);
+  }
+});
+</script>
+
+</body>
+</html>
